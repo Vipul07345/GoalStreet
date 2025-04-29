@@ -1,0 +1,33 @@
+
+.profileimage{
+    display:flex;
+    justify-content: center;
+}
+.image{
+    border-radius: 80px;
+    border: 3px solid rgb(107, 107, 205);
+}
+
+
+.Head{
+    font-size: 100px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color:aliceblue;
+
+
+}
+.Header{
+    text-align: center;
+    font-size: 50px;
+    color:aliceblue;
+    
+
+}
+.last{
+    margin-bottom: 300px;
+    text-align: center;
+    font-size: 50px;
+    color:aliceblue;
+}

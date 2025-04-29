@@ -1,0 +1,109 @@
+.About{
+    font-size: 75px;
+    text-align: center;
+    color:aliceblue;
+}
+.font{
+    font-size: 30px;
+    margin-bottom: 300px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    color:aliceblue;
+}
+.totech{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    text-align: center;
+    max-width: 1200px;
+    width: 90%;
+    border-radius: 10px;
+    padding: 15px;
+    margin: auto;
+    margin-bottom: 8px;
+}
+   
+.tech{
+    text-align: center;
+    font-size: 75px;
+    color:aliceblue;
+
+}
+.icon{
+    margin-bottom: 300px;
+}
+.icon svg{
+    align-items: center;
+    color:#1d3557;
+    margin-bottom: 10px;
+    border: 3px solid navy;
+    padding: 10px;
+    gap: 200px;
+}
+.edusize{
+    font-size: 75px;
+    text-align: center;
+    color: aliceblue;
+
+}
+.education{
+    box-shadow: 5px 5px 5px 5px rgba(43, 21, 204, 0.25);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    
+}
+.left{
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 30px;
+    color: aliceblue;
+}
+.right{
+    text-align: right;
+    font-size: 25px;
+    flex:1;
+    padding: 10px;
+    border-width: 10px;
+    color: aliceblue;
+    
+}
+.Edu{
+    padding:100px;
+    margin-bottom: 300px;
+    
+}
+.projects{
+    display: flex;
+    justify-content:space-around;
+}
+.img{
+    border-radius: 50px;
+    margin-left: 100px;
+    border: 5px solid rgb(106, 106, 244);
+    justify-content: left;
+}
+
+
+.project-title{
+    font-size: 75px;
+    color:aliceblue;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.project-info{
+    text-align: right;
+    margin-right: 80px;
+    font-size:20px;
+    color: aliceblue;
+    gap: 3px;
+    justify-items: flex-end;
+    
+
+}
+
+

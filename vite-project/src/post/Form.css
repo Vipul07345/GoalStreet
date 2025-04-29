@@ -1,0 +1,44 @@
+/* Base container */
+.total {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f0fafd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Common style for each input group */
+  .total > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  /* Labels */
+  .total label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  /* Input fields */
+  .total input[type="text"] {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border 0.3s ease;
+  }
+  
+  .total input[type="text"]:focus {
+    border-color: #007acc;
+    outline: none;
+  }
+  
+  /* Optional: Add subtle transition for focus */
+  .total input::placeholder {
+    color: #aaa;
+  }
+  

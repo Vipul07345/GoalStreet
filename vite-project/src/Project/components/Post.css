@@ -1,0 +1,30 @@
+
+.post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    gap: 20px; 
+  }
+  
+  .Total {
+    width: calc(50% - 10px); 
+    margin-bottom: 30px; 
+    padding: 10px; 
+    box-sizing: border-box; 
+  }
+  
+  .images {
+    width: 100%; 
+    height: auto;
+    display: block;
+    border-radius: 15px; 
+  }
+  
+  .message {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+    text-align: center; 
+  }
+  
+ 

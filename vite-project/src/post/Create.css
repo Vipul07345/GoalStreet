@@ -1,0 +1,32 @@
+
+h1.size{
+    background-color: white;
+    color:black;
+    font-weight: bold;
+    align-items: baseline;
+    margin: 0%;
+}
+.container{
+    background-color: rgb(212, 243, 243);
+    margin-bottom: 5px;
+    flex: auto;
+    /* padding: 20px; */
+    width: 100%;
+    height: auto;
+}
+.texts{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.fields{
+    margin: 5px auto 20px auto;
+    flex:auto;
+
+}
+.button{
+    width: 100px;
+    row-gap: 15px;
+}
+
