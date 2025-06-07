@@ -1,0 +1,34 @@
+.Card-Total {
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 150px;
+    background: linear-gradient(90deg, rgba(37, 62, 100, 0.86) 38%, rgba(107, 88, 88, 0) 100%),url('https://i.postimg.cc/c1n3L7y8/81804a483ba9ac06b31303398e15df0e746f17f9.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    
+  }
+  
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .card-head {
+    font-size: 44px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  }
+  
+  .card-para {
+    font-size: 18px;
+    font-weight: 400;
+
+  }
+  

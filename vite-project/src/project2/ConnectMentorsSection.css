@@ -1,0 +1,25 @@
+.connect-mentors-section {
+    background-color: #ffa500;  
+    color: white; /* White text */
+    padding: 80px 20px; /* Spacing similar to image */
+    text-align: center; /* Center text */
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.connect-mentors-section h2 {
+    font-size: 72px; /* Large font similar to image */
+    margin: 0 auto; /* Center heading */
+    max-width: 900px; /* Control line breaks */
+    font-weight: bold; /* Bold text */
+}
+
+@media (max-width: 768px) {
+    .connect-mentors-section h2 {
+        font-size: 2em; /* Responsive font size */
+        padding: 0 10px;
+    }
+    .connect-mentors-section {
+        padding: 50px 10px;
+    }
+}

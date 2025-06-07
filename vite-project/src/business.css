@@ -1,0 +1,83 @@
+body{
+    margin: 150px auto 20px auto;
+    border-radius: 12px;
+    padding: 20px;
+    height: auto;
+    background: #FFFFFF;
+    max-width: 600px;
+    border: 1px solid #00000066;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.Heading{
+    font-size: 30px;
+    text-align: center;
+
+}
+.post{
+    font-weight: 100;
+}
+
+.Radios{
+    display: flex;
+    flex-direction: row;
+}
+.radios-franchise{
+    margin-left: 50px;
+}
+.radios-business{
+    margin-left: 300px;
+}
+.form1-conatiner{
+    display: flex;
+    flex-direction: column;;
+    
+    
+}
+.required{
+    color: red;
+    font-size: 20px;
+    
+    
+}
+.form1-label {
+    width: 200px; 
+    text-align: right; 
+    margin-right: 10px; 
+}
+  
+.form{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 200px;
+    justify-content: center;
+}
+.form1-input{
+    width: 50%;
+    height: fit-content;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    
+}
+.Total-button2{
+    margin: 50px 0px;
+    display: flex;
+    justify-content: center;
+}
+.button2{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    background-color:#172A4D;
+    color: white;
+    border: 1px solid black;
+    font-weight: 300;
+
+}
+
+
+

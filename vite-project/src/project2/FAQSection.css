@@ -1,0 +1,126 @@
+/* project2/FAQSection.css */
+.faq-section-container {
+    background-color: white; /* White background as per image */
+    padding: 80px 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.faq-main-heading {
+    font-size: 50px; /* Large, bold heading */
+    font-weight: bold;
+    color: #333; /* Dark text color */
+    margin-bottom: 60px;
+    max-width: 800px;
+    line-height: 1.2;
+}
+
+.faq-items-wrapper {
+    width: 100%;
+    max-width: 900px; /* Max width for the FAQ items */
+    border-top: 1px solid #e0e0e0; /* Top border for the first item */
+}
+
+.faq-item {
+    border-bottom: 1px solid #e0e0e0; /* Separator line between FAQ items */
+    padding: 20px 0;
+    text-align: left; /* Align text to the left */
+}
+
+.faq-question-header {
+    display: flex;
+    justify-content: space-between; /* Space out question and icon */
+    align-items: center;
+    cursor: pointer; /* Indicate clickable area */
+    padding: 10px 0;
+}
+
+.faq-question {
+    font-size: 24px; /* Question font size */
+    font-weight: bold;
+    color: #333;
+    margin: 0; /* Remove default paragraph margin */
+    flex-grow: 1; /* Allow question to take available space */
+}
+
+.faq-toggle-icon {
+    font-size: 2em; /* Larger plus/minus icon */
+    font-weight: bold;
+    color: black; /* Orange color for the icon */
+    margin-left: 20px; /* Space between question and icon */
+    transition: transform 0.3s ease; /* Smooth transition for icon rotation if needed */
+}
+
+/* Styling for the answer content */
+.faq-answer-container {
+    max-height: 0; /* Initially hidden */
+    overflow: hidden; /* Hide overflow content */
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Smooth transition for height and padding */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.faq-answer-container.open {
+    max-height: 500px; /* Max height when open (adjust as needed for longest answer) */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.faq-answer-content {
+    font-size: 16px; /* Answer font size */
+    color: #666;
+    line-height: 1.6;
+    margin: 0; /* Remove default paragraph margin */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .faq-main-heading {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+
+    .faq-item {
+        padding: 15px 0;
+    }
+
+    .faq-question {
+        font-size: 1em;
+    }
+
+    .faq-toggle-icon {
+        font-size: 1.5em;
+        margin-left: 15px;
+    }
+
+    .faq-answer-container.open {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .faq-answer-content {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-main-heading {
+        font-size: 1.8em;
+    }
+
+    .faq-item {
+        padding: 10px 0;
+    }
+
+    .faq-question {
+        font-size: 0.9em;
+    }
+
+    .faq-toggle-icon {
+        font-size: 1.2em;
+        margin-left: 10px;
+    }
+}

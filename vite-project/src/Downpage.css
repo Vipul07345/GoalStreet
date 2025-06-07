@@ -1,0 +1,68 @@
+.Total-container{
+    background-color: #5A8BBB;
+    max-width: 1452px;
+    width: 100%;
+    max-height: 534px;
+    height: 100%;
+   
+}
+.Heading{
+    color: #FFFFFF;
+    letter-spacing: 0.2px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 30px 0px;
+
+}
+.Heading-Font{
+    font-size: 52px;
+    font-weight: 700;
+    color:white;
+}
+.Center-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.Input-bar{
+    max-width: 320px;
+    width: 320;
+    height: 56;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid grey;
+    margin: 0px 5px;
+
+}
+.Center-bar{
+    display: flex;
+    margin-bottom: 20px;
+}
+.Input-bar::placeholder{
+    width: 79px;
+    height: 19px;
+    color:#5A7184;
+    font-size: 16px;
+}
+.button-bar{
+    background-color:  #5A8BBB;
+    border: 1px solid white;
+    border-radius:8px ;
+    padding:  10px 18px;
+    color: white;
+    
+
+}
+.bottom-para{
+    color: #BBBBBB;
+    text-align: center;
+    padding-bottom: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.Font-para{
+    font-size: 16px;
+}

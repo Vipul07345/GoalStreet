@@ -1,0 +1,102 @@
+.user-profile-card {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #666;
+}
+
+.verified-badge {
+  background-color: white;
+  width: 80px;
+  height: auto;
+  margin-left: 150px;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  margin-bottom: 15px;
+}
+
+.info-label {
+  font-weight: 300;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: grey;
+
+}
+.display-info {
+  display: flex;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+.info-value {
+  margin-right: 10px;
+  flex-grow: 1;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 4px;
+}
+.save-button{
+    background-color: white;
+    border: none;
+    color: grey;
+    font-size: 15px;
+}
+.edit-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+.merzo-coins {
+  background-color: #172a4d;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 15px;
+}
+

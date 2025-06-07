@@ -1,0 +1,60 @@
+.Service {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 150px auto 20px auto;
+    border-radius: 12px;
+    padding: 20px;
+    height: auto;
+    background: #FFFFFF;
+    max-width: 600px;
+    border: 1px solid #00000066;
+    width: 100%;
+    
+
+
+    
+  }
+  
+  .Service-title {
+    text-align: center;
+    /* padding: 30px; */
+    font-weight: 400;
+  }
+  
+  .Service-container {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    align-items: center; 
+    
+    
+  }
+  
+  .Service-label {
+    flex-basis: 120px;
+    margin-right: 10px;
+    text-align: right;
+  }
+  
+  .Service-input,
+  .Service-select {
+    width:50%;
+    height: fit-content;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .Service-button{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .inner-button{
+    width: 100px;
+    height: 30px;
+    background-color:#172A4D;
+    border-radius:10px;
+    font-weight: 300;
+    border:1px solid black;
+    color: white;
+  }

@@ -1,0 +1,130 @@
+
+  .Trade-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 20px;
+    margin: 0px 50px;
+  }
+  
+  .Trade-Head {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-right: 250px;
+    font-weight: 600;
+    color: #172a4d;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  
+  .Trade-Image {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+  
+  .Image-All {
+    padding: 10px;
+    margin: 0px 50px;
+  
+  }
+  
+  .Image-All img {
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    max-width: 630px;
+    width: 100%;
+    height: 326px;
+  }
+  
+  .Image-Place {
+    font-size: 14px;
+    color: #1f1f1f;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #d2ef9a;
+    max-width: 70px;
+    border-radius: 48px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .Image-title {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .Image-time {
+    font-size: 14px;
+    color: #696c70;
+    margin-top: 5px;
+    font-weight: 400;
+
+  }
+  
+  .Trade-button {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 30px;
+  }
+  
+  .Trade-ViewMore {
+    background-color:white;
+    border: 1px solid grey;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: #172a4d;
+    padding: 10px 25px;
+    font-size: 29px;
+    font-weight: 700;
+  }
+  
+
+  .section-navigation {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .section-navigation span {
+    cursor: pointer;
+    padding: 8px 15px;
+    color: #747474;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  
+  .section-navigation span.active {
+    color:  #172a4d;
+    font-weight: bold;
+  }
+  
+ .Trade-NoImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .Trade-postbutton{
+    margin-top: 13px;
+ }
+ .Trade-Post{
+    font-size: 29px;
+    font-weight: 700;
+    color: #172a4d;
+    background-color: white;
+    padding: 5px 20px;
+    border-radius: 18px;
+    border: 1px solid black;
+ }
+  

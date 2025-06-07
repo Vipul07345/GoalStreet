@@ -1,0 +1,25 @@
+.Tophead-total{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0px;
+}
+
+.Tophead-title{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #666666;
+}
+.Tophead-heading{
+    font-size: 48px;
+    font-weight: 700;
+    color: #333333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.Tophead-para{
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

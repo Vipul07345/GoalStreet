@@ -1,0 +1,197 @@
+/* project2/LadderSection.css */
+.ladder-section-container {
+    background-color: #1a1a1a; /* Dark background color from the image */
+    color: white;
+    padding: 80px 20px; /* Ample padding for spacing */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Center the content wrapper */
+    align-items: center;
+    min-height: 700px; /* Ensure enough height for the graphic */
+    box-sizing: border-box;
+}
+.ladder-heading{
+    font-size: 24px;
+}
+.ladder-para{
+    font-size: 14px;
+}
+
+.ladder-content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center items when wrapped */
+    align-items: center;
+    max-width: 1200px; /* Max width for the entire section content */
+    width: 100%;
+    gap: 50px; /* Space between text and graphic */
+}
+
+.ladder-text-content {
+    flex: 1;
+    min-width: 300px; /* Minimum width for text block */
+    max-width: 500px; /* Max width for text block */
+    text-align: left;
+}
+
+
+
+.ladder-graphic-container {
+    flex: 1;
+    min-width: 350px;
+    max-width: 450px;
+    position: relative;
+    height: 500px; /* Fixed height for the container to match image aspect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ladder-image {
+    width: 100%; /* Make the image fill its container */
+    height: 100%;
+    object-fit: contain; /* Ensure the image scales without cropping */
+    position: absolute; /* Position the image */
+    top: 0;
+    left: 0;
+}
+
+/* Positioning for labels (0, 1, 100) - these need to be carefully adjusted based on the image */
+.rung-label {
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    z-index: 2; /* Ensure labels are on top of the image */
+}
+
+.label-0 {
+    /* Approximate positioning based on the image */
+    bottom: 40px;
+    right: 130px;
+}
+
+.label-1 {
+    /* Approximate positioning based on the image */
+    bottom: 110px;
+    right: 130px;
+}
+
+.label-100 {
+    /* Approximate positioning based on the image */
+    top: 40px;
+    right: 120px;
+}
+
+/* Positioning for text labels (Youtube, Students, GoalStreet) - these also need careful adjustment */
+.rung-text {
+    position: absolute;
+    font-size: 0.9em;
+    color: white;
+    line-height: 1.4;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.text-youtube {
+    /* Approximate positioning based on the image */
+    left: -50px;
+    bottom: 30px;
+    text-align: right;
+}
+
+.text-students {
+    /* Approximate positioning based on the image */
+    right: -50px;
+    top: 30px;
+    text-align: left;
+}
+
+.text-goalstreet {
+    /* Approximate positioning based on the image */
+    right: -70px;
+    top: 35%; /* Adjust vertically to align with orange rungs in the image */
+    text-align: left;
+    color: #ff9800; /* Color from the image */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ladder-section-container {
+        padding: 50px 10px;
+        min-height: auto;
+    }
+
+    .ladder-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .ladder-text-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .ladder-text-content h2 {
+        font-size: 2.2em;
+    }
+
+    .ladder-text-content p {
+        font-size: 1em;
+    }
+
+    .ladder-graphic-container {
+        height: 350px; /* Adjust height for smaller screens */
+        min-width: unset;
+        width: 100%;
+    }
+
+    .ladder-image {
+        object-fit: contain;
+    }
+
+    /* Adjust positions for smaller screens - these will still require fine-tuning */
+    .rung-label {
+        font-size: 1.1em;
+    }
+
+    .label-0 {
+        bottom: 20px;
+        right: 80px;
+    }
+
+    .label-1 {
+        bottom: 70px;
+        right: 80px;
+    }
+
+    .label-100 {
+        top: 20px;
+        right: 75px;
+    }
+
+    .rung-text {
+        font-size: 0.75em;
+        white-space: normal;
+        left: unset; /* Reset left/right for centering */
+        right: unset;
+        transform: translateX(-50%); /* Center horizontally */
+        width: 120px; /* Constrain width for wrapping */
+    }
+
+    .text-youtube {
+        bottom: -20px; /* Adjust position relative to container */
+        left: 30%;
+    }
+
+    .text-students {
+        top: -20px;
+        left: 70%;
+    }
+
+    .text-goalstreet {
+        top: 25%; /* Adjust vertical position */
+        left: 70%;
+    }
+}

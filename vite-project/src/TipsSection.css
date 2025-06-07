@@ -1,0 +1,58 @@
+.tips-title{
+  text-align: center;
+}
+
+.tips-image-url-container {
+  background: linear-gradient(252.17deg, rgba(243, 228, 203, 0.3243) 11.95%, rgba(133, 169, 194, 0.69) 90.81%); 
+  padding: 30px;
+  text-align: center;
+  border: 3px solid grey;
+  display: flex;
+  flex: 2;
+  justify-content: space-between;
+ padding: 50px 100px;
+}
+
+.tips-image-url-heading {
+  color: #172A4D;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.tips-image-url-content {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 30px;
+}
+
+.learn-advertising-url {
+  text-align: left;
+}
+
+.learn-advertising-url h2 {
+  color: #343a40; 
+  margin-bottom: 10px;
+  font-size: 33px;
+  font-weight: 400;
+}
+
+.learn-advertising-url p {
+  color: #6c757d; 
+  font-size:18px;
+  font-weight: 400;
+}
+
+.advertising-image-row {
+  display: flex;
+  gap: 15px;
+
+}
+
+.single-advertising-image {
+  width: 180px; 
+  height: 150px; 
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}

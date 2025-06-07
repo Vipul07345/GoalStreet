@@ -1,0 +1,52 @@
+
+
+.footer-access {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0fbff; /* Matching HeroSection background */
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* Matches the bottom radius of the main app container */
+}
+
+.access-now-btn {
+  background-color: #5A5A9A;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  max-width: 250px;
+  align-items: center;
+  justify-content: center;
+}
+
+.access-now-btn:hover {
+  background-color: #4a4a8a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .access-now-btn {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+}
+.footer-image{
+  max-width: 593px;
+  height: 445px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+
+}

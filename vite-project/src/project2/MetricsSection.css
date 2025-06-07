@@ -1,0 +1,145 @@
+.metrics-section-container {
+    background-color: #f0fbff;
+    padding: 80px 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.metrics-main-heading {
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 60px;
+    max-width: 800px;
+    line-height: 1.2;
+}
+
+.metrics-cards-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "card1 card2"
+        "card3 card4";
+    gap: 15px; /* Reduced gap to remove excess space */
+    max-width: 900px;
+    width: 100%;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.metric-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    transition: transform 0.2s ease-in-out;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Assign specific heights */
+.metrics-cards-wrapper > div:nth-child(1) { /* Large 5 job interviews */
+    grid-area: card1;
+    height: 300px;
+}
+
+.metrics-cards-wrapper > div:nth-child(2) { /* Small ~15 days */
+    grid-area: card2;
+    height: 180px;
+}
+
+.metrics-cards-wrapper > div:nth-child(3) { /* Small 24x7 support */
+    grid-area: card3;
+    height: 180px;
+}
+
+.metrics-cards-wrapper > div:nth-child(4) { /* Small 5 job interviews */
+    grid-area: card4;
+    height: 300px;
+    margin-top: -120px;
+}
+
+/* Fix the spacing issue on the right side */
+.metric-card-fixed {
+    margin-top: -5px; /* Slight negative margin to ensure perfect alignment */
+}
+
+/* Font sizes */
+.card-highlight-large {
+    font-size: 3.2em;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.card-highlight-small {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.card-subtext {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.4;
+    margin: 5px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .metrics-main-heading {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+
+    .metrics-cards-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3"
+            "card4";
+        gap: 15px;
+    }
+
+    .metric-card {
+        max-width: 100%;
+        padding: 25px;
+        height: auto;
+    }
+
+    .card-highlight-large {
+        font-size: 2.8em;
+    }
+
+    .card-highlight-small {
+        font-size: 1.8em;
+    }
+
+    .card-subtext {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .metrics-main-heading {
+        font-size: 1.8em;
+    }
+
+    .metric-card {
+        padding: 20px;
+    }
+}

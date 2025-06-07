@@ -1,0 +1,66 @@
+.top-page-container {
+  background-color: #fdd835;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 70px;
+}
+
+.top-page-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.top-page-icon {
+  font-size: 24px;
+}
+
+.top-page-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
+
+.join-waitlist-button {
+  background-color: #e0e0f8;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.join-waitlist-button:hover {
+  background-color: #d0d0e8;
+}
+
+.button-arrow {
+  font-size: 20px;
+}
+
+@media (max-width: 600px) {
+  .top-page-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .top-page-text {
+    font-size: 16px;
+  }
+  .join-waitlist-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}

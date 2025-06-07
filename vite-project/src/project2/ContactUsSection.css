@@ -1,0 +1,319 @@
+/* CourseSelector.css */
+
+/* General styling for the main wrapper */
+.course-selector-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f2f5; /* Light grey background */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+
+  /* Allow scrolling if content overflows, but hide the scrollbar */
+  overflow-y: auto; /* Enable vertical scrolling */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari, Opera) */
+.course-selector-main-wrapper::-webkit-scrollbar {
+  display: none; /* Completely hide the scrollbar */
+  width: 0; /* Also set width to 0 for good measure */
+  background: transparent; /* Make background transparent */
+}
+
+/* Styling for the selection panel */
+.selection-panel {
+  display: flex;
+  background-color: #fff;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  overflow: hidden; /* Ensures child elements don't break rounded corners */
+  width: 90%; /* Adjust width as needed */
+  max-width: 1200px; /* Max width for larger screens */
+  margin-top: 20px; /* Space from top */
+  flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+}
+
+/* Styling for each panel section */
+.panel-section {
+  flex: 1; /* Each section takes equal width */
+  min-width: 280px; /* Minimum width before wrapping */
+  padding: 20px;
+  border-right: 1px solid #eee; /* Separator between sections */
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-section:last-child {
+  border-right: none; /* No border on the last section */
+}
+
+/* Section titles */
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title .arrow {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.section-title .arrow-down {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/* Program cards */
+.program-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 500;
+  color: #555;
+  border: 1px solid #eee;
+}
+
+.program-card:hover {
+  background-color: #eef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.program-card.active {
+  background-color: #e0f7fa; /* Light blue for active */
+  color: #007bff; /* Primary color for active text */
+  border-color: #007bff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+.card-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Branch cards */
+.branch-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 500;
+  color: #555;
+  border: 1px solid #eee;
+}
+
+.branch-card:hover {
+  background-color: #eef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.branch-card.active {
+  background-color: #e0f7fa;
+  color: #007bff;
+  border-color: #007bff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+.branch-card .arrow-right {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Course cards */
+.course-cardinginner {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 500;
+  color: #555;
+  border: 1px solid #eee;
+}
+
+.course-cardinginner:hover {
+  background-color: #eef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .selection-panel {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .panel-section {
+    border-right: none;
+    border-bottom: 1px solid #eee; /* Add bottom border for vertical separation */
+  }
+
+  .panel-section:last-child {
+    border-bottom: none; /* No bottom border on the last section */
+  }
+}
+
+/* --- Contact Form Styles (New/Modified) --- */
+
+.contact-total {
+    background-color: white;
+    padding: 20px 0; /* Add some vertical padding */
+}
+
+.contact-title {
+    font-weight: 600;
+    font-size: clamp(30px, 5vw, 60px); /* Responsive font size */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 10px; /* Add some space below title */
+}
+
+.contact-passage {
+    text-align: center;
+    font-weight: 200;
+    font-size: clamp(18px, 3vw, 26px); /* Responsive font size */
+    margin-bottom: 30px; /* Space below passage */
+    padding: 0 15px; /* Add horizontal padding for small screens */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid skyblue;
+    border-radius: 20px;
+    flex-direction: column;
+    padding: 30px; /* Increased padding for better spacing */
+    margin: 20px auto; /* Center the container horizontally */
+    max-width: 800px; /* Set a max-width for larger screens */
+    width: 90%; /* Responsive width */
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.1); /* Subtle shadow matching border color */
+}
+
+.contactus-head {
+    font-size: clamp(20px, 2.5vw, 25px); /* Responsive font size */
+    max-width: 100%; /* Allow it to take full width of container */
+    line-height: 1.4; /* Improve readability */
+    margin: 10px 0; /* Adjust margin */
+    text-align: center; /* Center text */
+}
+
+.contactus-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%; /* Take full width of container */
+    width: 100%;
+    margin-bottom: 20px; /* Space below the box */
+}
+
+.contact-label {
+    text-align: left; /* Align label to the left */
+    font-size: clamp(20px, 2.2vw, 26px); /* Responsive font size */
+    margin-bottom: 8px; /* Space between label and input */
+    margin-top: 15px; /* Space above label */
+    color: #333; /* Darker color for labels */
+}
+
+.contact-input1,
+.contact-input2 {
+    width: 100%; /* Make inputs take full width */
+    padding: 12px 15px; /* Adjust padding */
+    border-radius: 10px;
+    border: 1px solid #ccc; /* Lighter grey border */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    font-size: 18px; /* Consistent font size */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+}
+
+.contact-input1:focus,
+.contact-input2:focus {
+    outline: none; /* Remove default outline */
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Light blue shadow on focus */
+}
+
+.contact-input2 {
+    min-height: 150px; /* Use min-height for textarea */
+    resize: vertical; /* Allow vertical resizing for textarea */
+}
+
+.contactus-button {
+    text-align: center; /* Center the button */
+    margin: 20px 0 0; /* Adjust margin for centering */
+    width: 100%; /* Allow button container to take full width */
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.contactus-buttonineer {
+    border-radius: 50px;
+    padding: 15px 35px; /* Increased padding for a larger button */
+    background-color: navy;
+    color: white;
+    border: 1px solid navy;
+    cursor: pointer; /* Indicate it's clickable */
+    font-size: 18px; /* Larger font size for button text */
+    font-weight: 600; /* Bolder text */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 5px 15px rgba(0, 0, 128, 0.2); /* Shadow for button */
+}
+
+.contactus-buttonineer:hover {
+    background-color: #003366; /* Darker navy on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 128, 0.3); /* Enhanced shadow on hover */
+}
+
+.contactus-buttonineer:active {
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 3px 10px rgba(0, 0, 128, 0.2); /* Smaller shadow on active */
+}
+
+/* Media queries for better responsiveness on small screens */
+@media (max-width: 600px) {
+    .contact-container {
+        padding: 20px; /* Reduce padding on smaller screens */
+        width: 95%; /* Take more width */
+    }
+
+    .contactus-buttonineer {
+        width: 100%; /* Full width button on small screens */
+        padding: 12px 20px; /* Adjust padding */
+    }
+}
+
+/* Global scrollbar hiding for the entire page body (uncomment if needed) */
+/*
+body {
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
+}
+*/
