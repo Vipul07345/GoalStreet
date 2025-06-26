@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutUsSection.css';
-import { FileX } from 'lucide-react';
+
 
 function AboutUsSection() {
   return (

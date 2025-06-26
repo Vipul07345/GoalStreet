@@ -1,0 +1,184 @@
+/* project2/JobApplyPage.css */
+
+.job-apply-page {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    border-radius: 20px;
+}
+
+.job-apply-page h2 {
+    text-align: center;
+    color: orange; 
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.job-apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.close-button{
+    background-color: white;
+    border:none;
+    font-size: 30px;
+}
+
+
+.form-section h3 {
+    color: orange;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    padding-bottom: 10px;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 12px 10px;
+    font-size: 1em;
+}
+
+.form-group input[type="file"] {
+    padding-top: 5px; 
+}
+
+
+
+.form-group textarea {
+    resize: vertical; 
+}
+
+.file-name {
+    margin-top: 5px;
+    font-size: 0.85em;
+    color: #666;
+}
+
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 15px; /* Space between inline form groups */
+    align-items: flex-end; /* Align inputs at the bottom */
+    margin-bottom: 15px;
+    
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+}
+.form-textarea{
+    border-radius: 8px;
+    border: 1px #d6d4d4 solid;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.form-degree{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px  #d6d4d4 solid;
+    margin-top: 10px;
+    
+}
+
+.form-group-inline {
+    flex: 1; /* Distribute space evenly */
+    min-width: 180px; /* Minimum width for each inline group */
+    margin-bottom: 0; /* Override default margin-bottom */
+}
+
+.form-group-inline label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.form-group-inline input {
+    width: calc(100% - 20px); /* Adjust for padding */
+}
+
+.remove-btn, .add-more-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px; /* Space above buttons */
+}
+
+.remove-btn {
+    background-color: red; /* Red for remove */
+    color: white;
+    font-size: 0.9em;
+}
+
+
+
+.add-more-btn {
+    background-color: rgb(211, 194, 8); /* Green for add */
+    color: white;
+    font-size: 0.95em;
+    margin-left: 10px;
+}
+
+
+
+.submit-button-applyjob {
+    background-color: orange; /* Blue for submit */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    align-self: center; /* Center the button */
+    margin-top: 20px;
+    width: 50%;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .job-apply-page {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-group-inline {
+        min-width: unset; /* Remove min-width on smaller screens */
+        width: 100%;
+    }
+
+    .remove-btn {
+        width: 100%;
+        margin-top: 15px;
+    }
+}

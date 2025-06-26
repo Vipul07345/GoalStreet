@@ -1,174 +1,201 @@
-.course-selector-main-wrapper {
-  padding: 25px;
-  /* background: linear-gradient(to right, #ffffff, #ffe0b3); */
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative; /* Needed for positioning the modal overlay */
+/* General container for CourseSelector */
+.cs-main-container {
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    font-family: 'Arial', sans-serif; /* A clear, common font */
 }
 
-.selection-panel {
-  display: flex;
-  gap: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+/* Main grid layout for the sections */
+.cs-selection-grid {
+    display: flex;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Nearly opaque white background for the grid */
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger, softer shadow */
+    border-radius: 15px; /* More pronounced rounding */
+    border: 1px solid #f0f0f0; /* Subtle border */
 }
 
-.panel-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 15px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+/* Common styles for panel sections (Program, Branch, Courses) */
+.cs-panel-section {
+    flex: 1; /* Distribute space equally */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Consistent spacing between cards */
+    padding: 20px;
+    background-color: #ffffff; /* Pure white background for each panel */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); /* Moderate shadow for individual panels */
+    border-radius: 12px; /* Consistent rounding */
+    border: 1px solid #e8e8e8; /* Subtle border for panels */
 }
 
-.section-title {
-  font-weight: bold;
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
+/* Section Headers (Program, Branch, Courses titles) */
+.cs-section-header {
+    font-weight: 700; /* Bolder */
+    font-size: 20px; /* Slightly larger */
+    color: #333; /* Dark text */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #FFAB40; /* Orange underline for headers */
+    padding-bottom: 12px;
+    text-transform: uppercase; /* Make titles uppercase */
+    letter-spacing: 0.5px;
 }
 
-.arrow {
-  margin-left: 8px;
-  color: #FFA500;
+/* Arrow icons within headers */
+.cs-arrow-right, .cs-arrow-down {
+    color: #FF8C00; /* Darker orange for arrows */
+    font-size: 1.3em; /* Larger arrows */
+    margin-left: 10px; /* Space from text */
+}
+.cs-arrow-right { margin-left: auto; /* Push arrow to right */ }
+
+
+/* Card base styles (Program, Branch, Course items) */
+.cs-program-card,
+.cs-branch-card,
+.cs-course-item {
+    background-color: #fcfcfc; /* Very light off-white for default state */
+    border: 2px solid #E0E0E0; /* Light gray border */
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+    font-weight: 600; /* Semi-bold */
+    color: #444; /* Slightly softer black */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+    border-radius: 8px; /* Consistent rounding */
+    user-select: none; /* Prevent text selection on click/drag */
 }
 
-.arrow-right {
-  margin-left: auto;
-  color: #FFA500;
-  font-size: 1.2em;
+/* Hover styles for all cards */
+.cs-program-card:hover,
+.cs-branch-card:hover,
+.cs-course-item:hover {
+    border-color: #FFC107; /* Brighter orange on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12); /* More noticeable shadow on hover */
+    transform: translateY(-3px); /* Subtle lift effect */
+    background-color: #FFF8E1; /* Light yellow background on hover */
 }
 
-.arrow-down {
-  margin-left: 8px;
-  color: #FFA500;
-  font-size: 1.2em;
+/* Active styles for Program Card */
+.cs-program-card.cs-active {
+    background-color: #FFA500; /* Solid Orange */
+    border-color: #FFA500;
+    color: #FFFFFF; /* White text for contrast */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow for active state */
+    transform: translateY(-5px); /* More pronounced lift */
+    position: relative;
+    z-index: 2; /* Ensure active card is on top */
 }
 
-.program-card {
-  background-color: #fff;
-  border: 2px solid #eee;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: bold;
-  color: #555;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+/* Icon styling for active program cards to make them white */
+.cs-program-card.cs-active .cs-card-icon {
+    filter: brightness(0) invert(1); /* Makes dark icons white */
 }
 
-.program-card:hover {
-  border-color: #FFA500;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.cs-card-icon {
+    width: 38px; /* Icon size */
+    height: 38px;
+    margin-right: 12px; /* Space between icon and text */
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
-.program-card.active {
-  background-color: #fce2c2;
-  border-color: #FFA500;
-  color: #333;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+/* Specific styling for Branch Cards */
+.cs-branch-card {
+    justify-content: space-between; /* Space out branch name and arrow */
+}
+.cs-arrow-icon {
+    color: #999; /* Grey arrow for unselected branches */
+    font-size: 1.1em;
+}
+.cs-branch-card.cs-active .cs-arrow-icon {
+    color: #333; /* Darker arrow for active branches */
 }
 
-.card-icon {
-  width: 40px;
-  height: 40px;
+/* Active styles for Branch Card */
+.cs-branch-card.cs-active {
+    background-color: #FFD580; /* Lighter Orange for active branch */
+    border-color: #FFA500;
+    color: #333; /* Darker text for readability */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    position: relative;
+    z-index: 2;
 }
 
-/* These styles are for pseudo-elements for icons,
-   but since you're using <img> tags, these might not be necessary
-   unless you intend to use them as fallbacks or for different styling.
-   Leaving them here as they were in your original CSS. */
-.program-card:nth-child(2) .card-icon::before {
-    content: '💼';
-}
-
-.program-card:nth-child(3) .card-icon::before {
-    content: '📋';
-}
-
-
-.branch-card {
-  background-color: #fff;
-  border: 2px solid #eee;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: bold;
-  color: #555;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.branch-card:hover {
-  border-color: #FFA500;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.branch-card.active {
-  background-color: #fce2c2;
-  border-color: #FFA500;
-  color: #333;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.course-cardinginner {
-  background-color: #fff;
-  border: 2px solid #eee;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  color: black;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.course-cardinginner.active {
-    background-color: #fce2c2;
+/* Active styles for Course Items */
+.cs-course-item.cs-active {
+    background-color: #FFECC6; /* Even lighter orange/peach for active course */
     border-color: #FFA500;
     color: #333;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Styles for the modal overlay */
-.register-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    position: relative;
+    z-index: 2;
 }
 
 
-@media (max-width: 900px) {
-  .selection-panel {
-    flex-direction: column;
-  }
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) { /* Tablet landscape and smaller */
+    .cs-selection-grid {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    .cs-panel-section {
+        padding: 15px;
+        gap: 10px;
+    }
+    .cs-section-header {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .cs-program-card,
+    .cs-branch-card,
+    .cs-course-item {
+        padding: 15px;
+        font-size: 15px;
+    }
+    .cs-card-icon {
+        width: 35px;
+        height: 35px;
+    }
 }
 
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 16px;
-  }
-  .program-card,
-  .branch-card,
-  .course-card { /* 'course-card' was not used in your JSX, assuming it was a typo for 'course-cardinginner' */
-    font-size: 14px;
-    padding: 12px;
-  }
+@media (max-width: 576px) { /* Mobile devices */
+    .cs-main-container {
+        padding: 15px;
+    }
+    .cs-selection-grid {
+        gap: 10px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .cs-panel-section {
+        padding: 10px;
+        gap: 8px;
+    }
+    .cs-section-header {
+        font-size: 16px;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+    }
+    .cs-program-card,
+    .cs-branch-card,
+    .cs-course-item {
+        padding: 12px;
+        font-size: 14px;
+        gap: 8px;
+    }
+    .cs-card-icon {
+        width: 30px;
+        height: 30px;
+    }
 }

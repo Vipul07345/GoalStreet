@@ -1,11 +1,9 @@
-.register-container {
+.job-portal-container {
     width: 100%;
     height: auto;
-    /* Adjusted max-width to make the card wider as per your request */
-    max-width: 500px; 
+    max-width: 500px; /* Adjusted max-width to make the card wider as per your request */
     margin: 50px auto;
     padding: 20px;
-    /* box-sizing: border-box; */
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -14,10 +12,9 @@
     border: 1px solid grey;
 }
 
-.register-card {
+.job-form-card {
     background-color: #fff;
-    /* Changed border-radius to 20px as requested */
-    border-radius: 20px; 
+    border-radius: 20px; /* Changed border-radius to 20px as requested */
     max-width: 950px;
     width: 100%;
     position: relative;
@@ -25,11 +22,9 @@
     flex-direction: column;
 }
 
-.card-header {
-    /* Changed to white background for header */
-    background: white; 
-    /* Changed header text color to black */
-    color: black;
+.card-header-section {
+    background: white; /* Changed to white background for header */
+    color: black; /* Changed header text color to black */
     padding: 20px 25px;
     display: flex;
     flex-direction: column;
@@ -39,7 +34,7 @@
     flex-shrink: 0; 
 }
 
-.back-to-home-button {
+.back-to-home-button { /* This class was not used in the JSX, but kept here if needed */
     position: absolute; 
     top: 15px;
     left: 15px; 
@@ -54,13 +49,13 @@
     z-index: 10; 
 }
 
-.back-to-home-button:hover {
+.back-to-home-button:hover { /* This class was not used in the JSX, but kept here if needed */
     background-color: #FFA500;
     color: white;
     border-color: #FF8C00;
 }
 
-.info-icon {
+.header-icon {
     font-size: 40px;
     margin-bottom: 10px;
     display: inline-flex; 
@@ -69,58 +64,40 @@
     width: 50px; 
     height: 50px; 
     border-radius: 50%; 
-    /* Set to a distinct yellow #FFEB3B for the info icon circle */
-    background-color: #FFEB3B; 
+    background-color: #FFEB3B; /* Set to a distinct yellow #FFEB3B for the info icon circle */
     color: white; 
     font-style: normal; 
     font-weight: bold; 
     font-size: 30px; 
 }
 
-.card-header h2 {
+.card-header-section h2 {
     margin: 0;
     font-size: 28px;
     font-weight: bold;
 }
 
-.card-header .links {
+.card-header-section .links { /* This class was not used in the JSX, but kept here if needed */
     margin-top: 10px;
     font-size: 14px;
 }
 
-.card-header .links a {
-    /* Changed link color to black */
-    color: black;
+.card-header-section .links a { /* This class was not used in the JSX, but kept here if needed */
+    color: black; /* Changed link color to black */
     text-decoration: underline;
     margin: 0 5px;
     transition: color 0.2s ease;
 }
 
-.card-header .links a:hover {
+.card-header-section .links a:hover { /* This class was not used in the JSX, but kept here if needed */
     color: #f0f0f0;
 }
 
-.card-body {
+.card-body-content {
     padding: 25px;
-    /* Changed body background to white */
-    background-color: white;
-    
+    background-color: white; /* Changed body background to white */
     flex-grow: 1; 
-    /* REMOVE these two lines to stop scrolling */
-    /* overflow-y: auto; */ 
-    /* max-height: clamp(350px, 60vh, 750px); */ 
 }
-
-/* REMOVE these scrollbar stylings as they are no longer needed */
-/* .card-body::-webkit-scrollbar {
-    width: 0px; 
-    height: 0px; 
-    background: transparent; 
-} */
-/* .card-body {
-    scrollbar-width: none; 
-} */
-
 
 .form-group {
     margin-bottom: 18px;
@@ -134,7 +111,7 @@
     font-size: 15px;
 }
 
-.form-control {
+.form-input {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd; 
@@ -144,58 +121,55 @@
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-control:focus {
-    /* Changed border to 1px solid black on focus */
-    border: 1px solid black;
+.form-input:focus {
+    border: 1px solid black; /* Changed border to 1px solid black on focus */
     outline: none;
     box-shadow: none; /* Removed default shadow for cleaner look */
 }
 
-.form-row {
+.form-row { /* This class was not used in the JSX, but kept here if needed */
     display: flex;
     gap: 20px;
     margin-bottom: 18px;
 }
 
-.form-row .form-group {
+.form-row .form-group { /* This class was not used in the JSX, but kept here if needed */
     flex: 1;
     margin-bottom: 0;
 }
 
-.form-check {
+.form-check { /* This class was not used in the JSX, but kept here if needed */
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.form-check-input {
+.form-check-input { /* This class was not used in the JSX, but kept here if needed */
     margin-right: 10px;
     width: 18px;
     height: 18px;
-    /* Changed accent-color to white for checkbox */
-    accent-color: white;
+    accent-color: white; /* Changed accent-color to white for checkbox */
 }
 
-.form-check-label {
+.form-check-label { /* This class was not used in the JSX, but kept here if needed */
     font-size: 15px;
     color: #555;
 }
 
-.form-check-label a {
+.form-check-label a { /* This class was not used in the JSX, but kept here if needed */
     color: #FFA500;
     text-decoration: none;
     font-weight: bold;
 }
 
-.form-check-label a:hover {
+.form-check-label a:hover { /* This class was not used in the JSX, but kept here if needed */
     text-decoration: underline;
 }
 
-.submit-button {
+.submit-form-button {
     width: 100%;
     padding: 15px;
-    /* Set to dark blue/purple #3F51B5 as seen in your images */
-    background-color: #3F51B5; 
+    background-color: #3F51B5; /* Set to dark blue/purple #3F51B5 as seen in your images */
     color: white;
     border: none;
     border-radius: 5px;
@@ -205,13 +179,12 @@
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.submit-button:hover {
-    /* Darker shade of blue/purple on hover */
-    background-color: #303F9F; 
+.submit-form-button:hover {
+    background-color: #303F9F; /* Darker shade of blue/purple on hover */
     transform: translateY(-2px);
 }
 
-.submit-button:active {
+.submit-form-button:active {
     transform: translateY(0);
 }
 
@@ -222,36 +195,56 @@
     text-align: center;
 }
 
+.card-footer-section {
+    padding: 15px 25px;
+    text-align: center;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.switch-form-button {
+    background: none;
+    border: none;
+    color: #3F51B5; /* Matching the submit button color */
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.switch-form-button:hover {
+    color: #303F9F; /* Darker shade on hover */
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .register-container {
+    .job-portal-container {
         margin: 20px auto;
         padding: 15px;
     }
 
-    .register-card {
+    .job-form-card {
         border-radius: 5px;
     }
 
-    .card-header {
+    .card-header-section {
         padding: 15px;
     }
 
-    .card-header h2 {
+    .card-header-section h2 {
         font-size: 24px;
     }
 
-    .info-icon {
+    .header-icon {
         width: 45px;
         height: 45px;
         font-size: 25px;
     }
 
-    .card-body {
+    .card-body-content {
         padding: 20px;
-        /* REMOVE this line from media query as well */
-        /* max-height: clamp(250px, 65vh, 600px); */ 
     }
 
     .form-row {
@@ -265,15 +258,15 @@
 }
 
 @media (max-width: 480px) {
-    .register-container {
+    .job-portal-container {
         padding: 10px;
     }
 
-    .card-header h2 {
+    .card-header-section h2 {
         font-size: 20px;
     }
 
-    .card-header .links {
+    .card-header-section .links {
         font-size: 12px;
     }
 
@@ -281,13 +274,17 @@
         font-size: 14px;
     }
 
-    .form-control {
+    .form-input {
         font-size: 14px;
         padding: 10px;
     }
 
-    .submit-button {
+    .submit-form-button {
         font-size: 16px;
         padding: 12px;
+    }
+
+    .switch-form-button {
+        font-size: 14px;
     }
 }

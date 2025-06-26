@@ -2,7 +2,7 @@
   background-color: #fdd835;
   padding: 15px 20px;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* This centers the top-page-content block itself */
   align-items: center;
   width: 100%;
   box-sizing: border-box;
@@ -12,9 +12,19 @@
 .top-page-content {
   display: flex;
   align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; 
+  width: 100%; 
+  max-width: 1200px; 
+
+}
+
+/* New class for the content that should be centered */
+.top-page-center-content {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Spacing between icon, text, and waitlist button */
+    flex-wrap: wrap; /* Allow items to wrap if screen is too small */
+   margin-right: 50px;
 }
 
 .top-page-icon {
@@ -25,7 +35,7 @@
   font-size: 18px;
   font-weight: bold;
   color: #333;
-  white-space: nowrap;
+  white-space: nowrap; /* Prevents text from wrapping if possible */
 }
 
 .join-waitlist-button {
@@ -51,16 +61,60 @@
   font-size: 20px;
 }
 
-@media (max-width: 600px) {
-  .top-page-content {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .top-page-text {
-    font-size: 16px;
-  }
-  .join-waitlist-button {
-    font-size: 14px;
-    padding: 8px 15px;
-  }
+/* Authentication buttons container */
+.auth-buttons-container {
+    display: flex;
+    flex-direction: row; /* Arranges Login/Signup/Logout horizontally */
+    gap: 15px; /* Space between Login and Signup buttons */
+   
+}
+
+.auth-buttonlogin-button{
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100px;
+  height: 50px;
+  padding-left: 28px;
+}
+.auth-buttonsignup-button{
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 120px;
+  height: 50px;
+  padding-left: 30px;
+}
+.auth-buttonlogout-button{
+   background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100px;
+  height: 50px;
+  padding-left: 22px;
+
 }

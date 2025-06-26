@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './CourseSelector.css'; // Import the CSS file for this component
 
 function CourseSelector({ onCourseClick }) {
-  const [activeProgram, setActiveProgram] = useState('internship'); // 'internship' or 'placement'
-  const [activeBranch, setActiveBranch] = useState('cse'); // Default to CSE/IT for internship
-  const [activePlacementBranch, setActivePlacementBranch] = useState('jobGuarantee'); // Default for placement program
+  const [activeProgram, setActiveProgram] = useState('internship');
+  const [activeBranch, setActiveBranch] = useState('cse');
+  // Corrected: Sticking with setActivePlacementBranch as the state setter
+  const [activePlacementBranch, setActivePlacementBranch] = useState('jobGuarantee');
 
-  // Add state to track the currently hovered branch for dynamic course display
   const [hoveredBranchId, setHoveredBranchId] = useState(null);
+  const [activeCourse, setActiveCourse] = useState(null);
 
   const programData = {
     internship: {
@@ -90,25 +91,13 @@ function CourseSelector({ onCourseClick }) {
   };
 
   const currentProgram = activeProgram === 'internship' ? programData.internship : programData.placement;
-  const CurrentBranches = currentProgram.branches;
+  const branchesToDisplay = currentProgram.branches;
 
-  // Determine the branches to display based on the active program
-  const branchesToDisplay = activeProgram === 'internship'
-    ? programData.internship.branches
-    : programData.placement.branches;
-
-  // Determine the courses to display based on the currently hovered branch,
-  // or the active branch if no specific branch is hovered.
   const getCoursesForDisplay = () => {
     let targetBranchId = hoveredBranchId;
 
-    // If no branch is currently hovered, use the active branch for the current program
     if (!targetBranchId) {
-      if (activeProgram === 'internship') {
-        targetBranchId = activeBranch;
-      } else {
-        targetBranchId = activePlacementBranch;
-      }
+      targetBranchId = (activeProgram === 'internship') ? activeBranch : activePlacementBranch;
     }
 
     const branch = currentProgram.branches.find(b => b.id === targetBranchId);
@@ -118,70 +107,80 @@ function CourseSelector({ onCourseClick }) {
   const coursesToDisplay = getCoursesForDisplay();
 
   return (
-    <div className="course-selector-main-wrapper">
-      <div className="selection-panel">
-        <div className="panel-section program-section">
-          <div className="section-title">Program <span className="arrow">→</span></div>
+    <div className="cs-main-container">
+      <div className="cs-selection-grid">
+        {/* Program Section */}
+        <div className="cs-panel-section cs-program-section">
+          <div className="cs-section-header">Program <span className="cs-arrow-right">→</span></div>
           <div
-            className={`program-card ${activeProgram === 'internship' ? 'active' : ''}`}
-            onMouseEnter={() => { // Use onMouseEnter for program selection
+            className={`cs-program-card ${activeProgram === 'internship' ? 'cs-active' : ''}`}
+            onMouseEnter={() => {
               setActiveProgram('internship');
-              setActiveBranch('cse'); // Set default active branch for internship on hover
-              setHoveredBranchId('cse'); // Set hovered branch to default as well
+              setActiveBranch('cse');
+              setHoveredBranchId('cse');
+              setActiveCourse(null);
             }}
           >
-            <img src="/assets/internship-icon.svg" alt="Internship" className="card-icon" />
+            {/* Image removed */}
             INTERNSHIP PROGRAM
           </div>
           <div
-            className={`program-card ${activeProgram === 'placement' ? 'active' : ''}`}
-            onMouseEnter={() => { // Use onMouseEnter for program selection
+            className={`cs-program-card ${activeProgram === 'placement' ? 'cs-active' : ''}`}
+            onMouseEnter={() => {
               setActiveProgram('placement');
-              setActivePlacementBranch('jobGuarantee'); // Set default active branch for placement on hover
-              setHoveredBranchId('jobGuarantee'); // Set hovered branch to default as well
+              // Corrected: Using the consistent setActivePlacementBranch
+              setActivePlacementBranch('jobGuarantee');
+              setHoveredBranchId('jobGuarantee');
+              setActiveCourse(null);
             }}
           >
-            <img src="/assets/placement-icon.svg" alt="Placement" className="card-icon" />
+            {/* Image removed */}
             PLACEMENT PROVISION PROGRAM
           </div>
         </div>
 
-        <div className="panel-section branch-section">
-          <div className="section-title">Branch <span className="arrow">→</span></div>
+        {/* Branch Section */}
+        <div className="cs-panel-section cs-branch-section">
+          <div className="cs-section-header">Branch <span className="cs-arrow-right">→</span></div>
           {branchesToDisplay.map((branch) => (
             <div
               key={branch.id}
-              className={`branch-card ${
-                (activeProgram === 'internship' && activeBranch === branch.id) ||
-                (activeProgram === 'placement' && activePlacementBranch === branch.id) ||
-                hoveredBranchId === branch.id // Highlight on hover
-                ? 'active' : ''
+              className={`cs-branch-card ${
+                ((activeProgram === 'internship' && activeBranch === branch.id) ||
+                (activeProgram === 'placement' && activePlacementBranch === branch.id)) ||
+                hoveredBranchId === branch.id
+                ? 'cs-active' : ''
               }`}
-              onMouseEnter={() => { // Use onMouseEnter for branch selection
+              onMouseEnter={() => {
                 if (activeProgram === 'internship') {
                   setActiveBranch(branch.id);
                 } else {
+                  // Corrected: Using the consistent setActivePlacementBranch
                   setActivePlacementBranch(branch.id);
                 }
-                setHoveredBranchId(branch.id); // Set the currently hovered branch
+                setHoveredBranchId(branch.id);
+                setActiveCourse(null);
               }}
               onMouseLeave={() => {
-                // When leaving a branch, clear hoveredBranchId, courses will revert to active branch's courses
                 setHoveredBranchId(null);
               }}
             >
-              {branch.name} <span className="arrow-right">›</span>
+              {branch.name} <span className="cs-arrow-icon">›</span>
             </div>
           ))}
         </div>
 
-        <div className="panel-section courses-section">
-          <div className="section-title">Courses <span className="arrow-down">↓</span></div>
+        {/* Courses Section */}
+        <div className="cs-panel-section cs-courses-section">
+          <div className="cs-section-header">Courses <span className="cs-arrow-down">↓</span></div>
           {coursesToDisplay.map((course, index) => (
             <div
               key={index}
-              className="course-cardinginner"
-              onClick={onCourseClick} // Keep onClick for actually selecting a course
+              className={`cs-course-item ${activeCourse === course ? 'cs-active' : ''}`}
+              onClick={() => {
+                setActiveCourse(course);
+                onCourseClick(course);
+              }}
             >
               {course}
             </div>

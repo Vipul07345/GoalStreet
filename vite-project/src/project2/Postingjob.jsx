@@ -1,9 +1,61 @@
 import React, { useState } from 'react';
-import './PostJob.css'; // You'll need to create this CSS file for styling
+import axios from 'axios';
+import './PostingPage.css';
+
 
 const PostJob = () => {
-    // Default to 'hr' form when PostJob component is loaded
+
     const [activeForm, setActiveForm] = useState('hr');
+
+
+    const [hrdata, setHrdata] = useState({
+        PostedOnDate: '',
+                        Title: '',
+                        Company: '',
+                        Salary: '',
+                        Type: '',
+                        Duration:""
+    });
+
+
+
+
+    const handleHrChange = (e) => {
+        const { id, value } = e.target;
+        setHrdata(prevData => ({
+            ...prevData,
+            [id]: value,
+        }));
+    };
+
+    
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (activeForm === 'hr') {
+            axios.post("http://localhost:8000/api/hrpostjob", hrdata).then( 
+                response => {
+                    console.log(response.data)
+                    alert("successfully completed");
+                    setHrdata({
+                        PostedOnDate: '',
+                        Title: '',
+                        Company: '',
+                        Salary: '',
+                        Type: '',
+                        Duration:""
+
+                    })
+                }
+            ).catch(error => {
+                console.error("Error sending details:", error.response ? error.response.data : error.message);
+                alert("Failed to send details. Please try again.");
+            });
+        }
+        
+    };
+
 
     const renderFormContent = () => {
         switch (activeForm) {
@@ -11,142 +63,122 @@ const PostJob = () => {
                 return (
                     <>
                         <div className="form-group">
-                            <label htmlFor="hrFullName">Full Name</label>
+                            <label htmlFor="PostedOnDate">Posted on</label>
                             <input
                                 type="text"
-                                className="form-control"
-                                id="hrFullName"
-                                placeholder="Sai Charan"
+                                className="form-input"
+                                id="PostedOnDate" // Matches the state key
+                                placeholder="1-1-2020"
+                                value={hrdata.PostedOnDate} // Controlled component
+                                onChange={handleHrChange} // Attach handler
+                                required
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="companyName">Company Name</label>
+                            <label htmlFor="title">Title</label>
                             <input
                                 type="text"
-                                className="form-control"
-                                id="companyName"
-                                placeholder="Google"
+                                className="form-input"
+                                id="Title" // Matches the state key
+                                placeholder="FullStack"
+                                value={hrdata.Title}
+                                onChange={handleHrChange}
+                                required
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="hrMobile">Mobile</label>
+                            <label htmlFor="Company">Company</label>
                             <input
                                 type="text"
-                                className="form-control"
-                                id="hrMobile"
-                                placeholder="9878787123"
+                                className="form-input"
+                                id="Company" // Matches the state key
+                                placeholder="google"
+                                value={hrdata.Company}
+                                onChange={handleHrChange}
+                                required
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="companyEmail">Your Company Email</label>
+                            <label htmlFor="Salary">Salary</label>
                             <input
-                                type="email"
-                                className="form-control"
-                                id="companyEmail"
-                                placeholder="20311A05M7@sreenidhi.edu.in"
+                                type="text"
+                                className="form-input"
+                                id="Salary" // Matches the state key
+                                placeholder="salary"
+                                value={hrdata.Salary}
+                                onChange={handleHrChange}
+                                required
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="industry">Industry</label>
+                            <label htmlFor="Type">Type</label>
                             <input
                                 type="text"
-                                className="form-control"
-                                id="industry"
-                                placeholder="Health"
+                                className="form-input"
+                                id="Type" // Matches the state key
+                                placeholder="Office"
+                                value={hrdata.Type}
+                                onChange={handleHrChange}
+                                required
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="companySize">Company Size</label>
+                            <label htmlFor="Duration">Duration
+                            </label>
                             <input
                                 type="text"
-                                className="form-control"
-                                id="companySize"
-                                placeholder="1"
+                                className="form-input"
+                                id="Duration" // Matches the 
+                                placeholder="full time"
+                                value={hrdata.Duration} // Controlled component
+                                onChange={handleHrChange} // Attach handler
+                                required
                             />
                         </div>
+                        
                     </>
                 );
-            case 'applyJob':
-                return (
-                    <>
-                        <p className="form-description">Fill out the details below to apply for a job.</p>
-                        <div className="form-group">
-                            <label htmlFor="jobApplicantName">Your Name</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="jobApplicantName"
-                                placeholder="Your Full Name"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="jobApplicantEmail">Your Email</label>
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="jobApplicantEmail"
-                                placeholder="your.email@example.com"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="resumeUpload">Upload Resume</label>
-                            <input
-                                type="file"
-                                className="form-control"
-                                id="resumeUpload"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="coverLetter">Cover Letter (Optional)</label>
-                            <textarea
-                                className="form-control"
-                                id="coverLetter"
-                                rows="4"
-                                placeholder="Tell us about yourself and why you're a good fit..."
-                            ></textarea>
-                        </div>
-                    </>
-                );
+           
             default:
                 return null;
         }
     };
 
+
     const getTitle = () => {
         switch (activeForm) {
             case 'hr':
-                return 'HR Registration / Post a Job';
-            case 'applyJob':
-                return 'Apply for a Job';
+                return 'HR Post Job';
+
             default:
                 return 'Form';
         }
     };
 
     return (
-        <div className="post-job-container">
-            <div className="post-job-card">
-                <div className="card-header">
-                    <span className="info-icon">
+        <div className="job-portal-container">
+            <div className="job-form-card">
+                <div className="card-header-section">
+                    <span className="header-icon">
                         <i></i>
                     </span>
                     <h2>{getTitle()}</h2>
                 </div>
-                <div className="card-body">
-                    <form>
+                <div className="card-body-content">
+                    <form onSubmit={handleSubmit}>
                         {renderFormContent()}
-                        <button type="submit" className="submit-button">
+                        <button type="submit" className="submit-form-button">
                             Submit
                         </button>
                     </form>
                 </div>
-                <div className="card-footer">
+                <div className="card-footer-section">
                     {activeForm === 'hr' ? (
-                        <button className="btn-switch-form" onClick={() => setActiveForm('applyJob')}>
-                            Looking to Apply for a Job?
+                        <button className="switch-form-button" onClick={() => setActiveForm('applyJob')}>
+                            
                         </button>
                     ) : (
-                        <button className="btn-switch-form" onClick={() => setActiveForm('hr')}>
+                        <button className="switch-form-button" onClick={() => setActiveForm('hr')}>
                             Are you an HR? Post a Job!
                         </button>
                     )}

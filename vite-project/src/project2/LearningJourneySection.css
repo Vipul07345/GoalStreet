@@ -156,13 +156,11 @@
     font-size: 20px;
     text-decoration: none;
     display: flex;
+    margin-right: 20px;
+    margin-top: 3px;
     
 }
 
-.enroll-button:hover {
-    background-color: #f0f0f0;
-    color: white;
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

@@ -1,9 +1,32 @@
 import React, { useState } from 'react'
 import './ContactUSSection.css'
+import axios from 'axios'
 
 function ContactUsSection() {
     const[Youremail,SetYourEmail]=useState("")
     const[Yourmessage,SetYourMessage]=useState("")
+
+    const HandleSave = () => {
+       
+        const dataToSend = {
+            YourEmail: Youremail,   
+            Message: Yourmessage 
+        };
+
+       
+        axios.post("http://localhost:8000/api/contact", dataToSend)
+            .then(response => {
+                console.log(response.data);
+                alert("Message sent successfully!");
+                SetYourEmail(""); 
+                SetYourMessage("");
+            })
+            .catch(error => {
+                console.error("Error sending message:", error); 
+                alert("Failed to send message. Please try again."); 
+            });
+    };
+
 
 
   return (
@@ -28,7 +51,7 @@ function ContactUsSection() {
 
 
 </div>
-    <div className='contactus-button'><button className='contactus-buttonineer'>SEND</button></div>
+    <div className='contactus-button'><button className='contactus-buttonineer' onClick={HandleSave}>SEND</button></div>
     </div>
 
     </div>

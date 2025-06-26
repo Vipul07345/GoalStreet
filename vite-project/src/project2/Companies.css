@@ -1,0 +1,140 @@
+.companies-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+.companies-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.companies-heading-wrapper {
+    margin-bottom: 20px;
+}
+
+.companies-career-talkz {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.companies-orange {
+    color: #FF8C00;
+    font-size: 1.3rem;
+}
+
+.companies-ash {
+    color: blue;
+}
+
+.companies-ash-light {
+    color: #888;
+}
+
+
+.companies-main-message {
+    margin-bottom: 30px;
+}
+
+.companies-we-help-you-grow {
+    font-size: 30px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.companies-description {
+    font-size: 1.1rem;
+    color:grey;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.companies-find-work-button {
+    background-color: #6A5ACD;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.companies-find-work-button:hover {
+    background-color: #5A4ABF;
+}
+
+.companies-image-container {
+    flex: 1.5;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.companies-hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .companies-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .companies-content {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .companies-heading-wrapper {
+        margin-bottom: 10px;
+    }
+    
+    .companies-career-talkz {
+        justify-content: center;
+    }
+
+    .companies-we-help-you-grow {
+        font-size: 2.5rem;
+    }
+
+    .companies-description {
+        font-size: 1rem;
+    }
+
+    .companies-find-work-button {
+        width: 80%;
+        max-width: 250px;
+        align-self: center;
+    }
+
+    .companies-image-container {
+        margin-top: 30px;
+        min-width: unset;
+    }
+}
