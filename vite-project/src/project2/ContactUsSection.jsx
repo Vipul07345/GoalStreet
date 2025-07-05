@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './ContactUSSection.css'
+import './ContactUsSection.css'
 import axios from 'axios'
 
 function ContactUsSection() {
