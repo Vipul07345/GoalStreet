@@ -24,7 +24,7 @@ const GrowthPage = ({ onGoBack }) => {
 
   const Handlesubmitgrowth = async (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8000/api/growth", GrowthData)
+    axios.post("${process.env.REACT_APP_BASE_URL}/api/growth", GrowthData)
       .then(response => {
         console.log(response.data);
         alert("Successfully completed");

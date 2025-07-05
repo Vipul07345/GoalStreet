@@ -27,7 +27,7 @@ const SignupPage = ({ onSignupSuccess }) => {
         };
 
         try {
-            const response = await axios.post("http://localhost:8000/api/signup", dataSignup);
+            const response = await axios.post("${process.env.REACT_APP_BASE_URL}/api/signup", dataSignup);
             console.log(response.data);
             alert("Sign up successfully!");
             setName("");

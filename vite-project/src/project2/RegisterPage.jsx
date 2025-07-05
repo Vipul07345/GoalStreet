@@ -84,19 +84,19 @@ const RegisterPage = ({ initialForm }) => {
 
         if (activeForm === "register") {
             console.log("Register Data:", registerData);
-            apiCall = axios.post("http://localhost:8000/api/register", registerData);
+            apiCall = axios.post(`/api/register`, registerData);
             successMessage = 'Registration successful!';
             errorMessage = 'Error submitting register form:';
             resetFunction = () => setRegisterData(initialRegisterData);
         } else if (activeForm === "college") {
             console.log("College Data:", collegeData);
-            apiCall = axios.post('http://localhost:8000/api/college', collegeData);
+            apiCall = axios.post(`${process.env.REACT_APP_BASE_URL}/api/college`, collegeData);
             successMessage = 'College registration successful!';
             errorMessage = 'Error submitting college form:';
             resetFunction = () => setCollegeData(initialCollegeData);
         } else if (activeForm === "hr") {
             console.log("HR Data:", hrData);
-            apiCall = axios.post("http://localhost:8000/api/hr", hrData);
+            apiCall = axios.post(`${process.env.REACT_APP_BASE_URL}/api/hr`, hrData);
             successMessage = 'HR registration successful!';
             errorMessage = 'Error submitting HR form:';
             resetFunction = () => setHrData(initialHrData);
@@ -106,7 +106,7 @@ const RegisterPage = ({ initialForm }) => {
             for (const key in applyJobData) {
                 formData.append(key, applyJobData[key]);
             }
-            apiCall = axios.post("http://localhost:8000/api/applyJob", formData, {
+            apiCall = axios.post(`${process.env.REACT_APP_BASE_URL}/api/applyJob`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

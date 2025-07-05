@@ -14,7 +14,7 @@ function ContactUsSection() {
         };
 
        
-        axios.post("http://localhost:8000/api/contact", dataToSend)
+        axios.post(`${process.env.REACT_APP_BASE_URL}/api/contact`, dataToSend)
             .then(response => {
                 console.log(response.data);
                 alert("Message sent successfully!");

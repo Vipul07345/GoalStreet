@@ -92,7 +92,7 @@ const ApplyPage = ({ jobId, onClose, onApplicationSuccess }) => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8000/api/applyjob', dataToSend);
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/applyjob`, dataToSend);
 
             console.log('Backend Response:', response.data);
             alert('Application Submitted Successfully!');

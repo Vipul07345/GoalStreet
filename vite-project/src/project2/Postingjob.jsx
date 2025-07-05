@@ -34,7 +34,7 @@ const PostJob = () => {
         e.preventDefault();
 
         if (activeForm === 'hr') {
-            axios.post("http://localhost:8000/api/hrpostjob", hrdata).then( 
+            axios.post("${process.env.REACT_APP_BASE_URL}/api/hrpostjob", hrdata).then( 
                 response => {
                     console.log(response.data)
                     alert("successfully completed");

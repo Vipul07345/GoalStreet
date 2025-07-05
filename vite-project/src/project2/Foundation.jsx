@@ -24,7 +24,7 @@ const Foundation = ({ onGoBack }) => {
     
       const HandlesubmitFoundation = async (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/api/foundation", FoundationData)
+        axios.post("${process.env.REACT_APP_BASE_URL}/api/foundation", FoundationData)
           .then(response => {
             console.log(response.data);
             alert("Successfully completed");

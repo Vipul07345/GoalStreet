@@ -38,7 +38,7 @@ const LoginPage = ({ onLoginSuccess }) => {
         };
 
         try {
-            const response = await axios.post("http://localhost:8000/api/login", datalogin);
+            const response = await axios.post("${process.env.REACT_APP_BASE_URL}/api/login", datalogin);
             console.log(response.data);
 
             // Store the user data/token in localStorage upon successful login

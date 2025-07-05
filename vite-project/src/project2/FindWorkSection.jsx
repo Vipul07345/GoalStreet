@@ -17,7 +17,7 @@ function FindWorkSection() {
                 setLoading(true);
                 setError(null);
 
-                const response = await axios.get("http://localhost:8000/api/hrpostjob");
+                const response = await axios.get("${process.env.REACT_APP_BASE_URL}/api/hrpostjob");
 
                 const initialAppliedStatus = {};
                 response.data.forEach(job => {
