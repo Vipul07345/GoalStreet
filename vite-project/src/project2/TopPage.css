@@ -1,3 +1,328 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base HTML and Body Styles */
+html, body {
+  background-color: #f0fbff;
+  font-family: 'Inter', Arial, sans-serif; /* Changed font to Inter for consistency */
+  max-width: 1500px; /* Max width for larger screens */
+  width: 100%;
+  min-width: 100vw; /* Ensures it takes full viewport width */
+  min-height: 100vh; /* Ensures it takes full viewport height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto;
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+/* Hide Webkit Scrollbars */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
+}
+
+/* Main Application Container */
+.apptotalproject {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Full Viewport Width Utility */
+.full-viewport-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+/* Page Section Wrapper */
+.page-section-wrapper {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Inner App Container */
+.app-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto; /* Centers the content */
+  flex-grow: 1;
+  overflow-x: hidden; /* Prevent horizontal scrolling within container */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f0fbff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Added subtle shadow for depth */
+}
+
+/* Logo Styles */
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333; /* Darker color for better contrast */
+  cursor: pointer;
+  white-space: nowrap; /* Prevent logo from wrapping */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  flex-grow: 1; /* Allow nav links to take available space */
+  justify-content: flex-start; /* Align links to the start by default */
+  margin-left: 20px; /* Space from logo */
+}
+
+.nav-links .nav-button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  border-bottom: 2px solid transparent; /* Added for active state visual */
+}
+
+.nav-links .nav-button:hover,
+.nav-links .nav-button.active {
+  color: #007bff; /* Changed to a standard blue for hover/active */
+  border-color: #007bff; /* Highlight active link with border */
+}
+
+/* Header Actions (Buttons) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between action buttons */
+}
+
+.header-actions .apply-jobs-btn,
+.header-actions .post-job-btn {
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 18px; /* Slightly more padding for better touch targets */
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease; /* Added transform for subtle click effect */
+  white-space: nowrap; /* Prevent buttons from wrapping text */
+}
+
+.header-actions .apply-jobs-btn {
+  background-color: #FFA500; /* Orange color */
+}
+
+.header-actions .post-job-btn {
+  background-color: #5454A9; /* Darker blue */
+}
+
+.header-actions .apply-jobs-btn:hover {
+  background-color: #e69500;
+  transform: translateY(-1px);
+}
+
+.header-actions .post-job-btn:hover {
+  background-color: #43438a;
+  transform: translateY(-1px);
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  background-color: #f0fbff;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto; /* Pushes footer to the bottom */
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.05); /* Subtle shadow for footer */
+}
+
+/* Metrics Section Styles */
+.metrics-section-container {
+  background-color: #f0fbff;
+  padding: 80px 20px;
+  font-family: 'Inter', Arial, sans-serif; /* Changed font to Inter for consistency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.metrics-main-heading {
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 60px;
+  max-width: 800px;
+  line-height: 1.2;
+}
+
+.metrics-cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "card1 card2"
+    "card3 card4";
+  gap: 15px;
+  max-width: 900px;
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.metric-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Assign specific heights - these will be adjusted for mobile */
+.metrics-cards-wrapper > div:nth-child(1) { /* Large 5 job interviews */
+  grid-area: card1;
+  height: 300px;
+}
+
+.metrics-cards-wrapper > div:nth-child(2) { /* Small ~15 days */
+  grid-area: card2;
+  height: 180px;
+}
+
+.metrics-cards-wrapper > div:nth-child(3) { /* Small 24x7 support */
+  grid-area: card3;
+  height: 180px;
+}
+
+.metrics-cards-wrapper > div:nth-child(4) { /* Large 5 job interviews (originally small, adjusted to large by user) */
+  grid-area: card4;
+  height: 300px;
+  margin-top: -120px; /* This will be overridden for mobile */
+}
+
+/* Fix the spacing issue on the right side - this will be overridden for mobile */
+.metric-card-fixed {
+  margin-top: -5px;
+}
+
+/* Font sizes for metric cards */
+.card-highlight-large {
+  font-size: 3.2em;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.card-highlight-small {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.card-subtext {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+
+/* Camera Card Styles - Integrated and Adjusted */
+.camera-card {
+  background-color: #6e9bc6;
+  color: white;
+  padding: 20px;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  text-align: left;
+  border-radius: 10px; /* Added rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added a subtle shadow */
+  font-family: 'Inter', Arial, sans-serif; /* Consistency */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+.camera-card h1 { /* Specificity for h1 inside camera-card */
+  font-size: 25px;
+  margin: 15px 0 10px 0; /* Adjusted margin for better spacing */
+  line-height: 1.3;
+}
+
+.camera-card h2 { /* Specificity for h2 inside camera-card */
+  font-size: 12px;
+  margin: 5px 0;
+  opacity: 0.8; /* Slight opacity for subheading */
+}
+
+.camera-card p { /* Specificity for p inside camera-card */
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px; /* More space before the button */
+  text-align: center; /* Center align paragraph text */
+}
+
+.camera-card .shop-button { /* Specificity for shop-button inside camera-card */
+  background-color: #00bcd4;
+  border: none;
+  color: white;
+  padding: 12px 25px; /* Slightly larger padding for better touch target */
+  font-size: 16px;
+  border-radius: 25px; /* More rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Button shadow */
+  text-transform: uppercase; /* Make button text uppercase */
+  font-weight: bold;
+}
+
+.camera-card .content-camera { /* Specificity for content-camera inside camera-card */
+  max-width: 600px;
+  width: 100%;
+  height: auto; /* Changed to auto for better responsiveness */
+  object-fit: contain;
+  margin-bottom: 20px; /* Space below the image */
+}
+
+.camera-card .shop-button:hover {
+  background-color: #0097a7;
+  transform: translateY(-2px); /* More pronounced hover effect */
+}
+
+/* Top Page Container Styles */
 .top-page-container {
   background-color: #fdd835;
   padding: 15px 20px;
@@ -7,28 +332,31 @@
   width: 100%;
   box-sizing: border-box;
   min-height: 70px;
+  font-family: 'Inter', Arial, sans-serif; /* Consistency */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for visual separation */
 }
 
 .top-page-content {
   display: flex;
   align-items: center;
-  justify-content: center; 
-  width: 100%; 
-  max-width: 1200px; 
-
+  justify-content: space-between; /* Space out center content and auth buttons */
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 15px; /* Gap between main content and auth buttons */
 }
 
-/* New class for the content that should be centered */
 .top-page-center-content {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Spacing between icon, text, and waitlist button */
-    flex-wrap: wrap; /* Allow items to wrap if screen is too small */
-   margin-right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Spacing between icon, text, and waitlist button */
+  flex-wrap: wrap; /* Allow items to wrap if screen is too small */
+  /* margin-right: 50px; Removed for better mobile responsiveness, adjust with gap/justify-content */
 }
 
 .top-page-icon {
   font-size: 24px;
+  color: #333;
 }
 
 .top-page-text {
@@ -36,6 +364,7 @@
   font-weight: bold;
   color: #333;
   white-space: nowrap; /* Prevents text from wrapping if possible */
+  text-align: center; /* Ensures text is centered if it wraps */
 }
 
 .join-waitlist-button {
@@ -49,12 +378,15 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center; /* Center content within button */
   gap: 8px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 150px; /* Ensure a minimum width for the button */
 }
 
 .join-waitlist-button:hover {
   background-color: #d0d0e8;
+  transform: translateY(-1px);
 }
 
 .button-arrow {
@@ -63,13 +395,16 @@
 
 /* Authentication buttons container */
 .auth-buttons-container {
-    display: flex;
-    flex-direction: row; /* Arranges Login/Signup/Logout horizontally */
-    gap: 15px; /* Space between Login and Signup buttons */
-   
+  display: flex;
+  flex-direction: row; /* Arranges Login/Signup/Logout horizontally */
+  gap: 10px; /* Space between Login and Signup buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  justify-content: center; /* Center buttons horizontally if they wrap */
 }
 
-.auth-buttonlogin-button{
+.auth-buttonlogin-button,
+.auth-buttonsignup-button,
+.auth-buttonlogout-button {
   background-color: orange;
   color: white;
   padding: 10px 20px;
@@ -80,41 +415,201 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center; /* Center text within buttons */
   gap: 8px;
-  width: 100px;
-  height: 50px;
-  padding-left: 28px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  height: 50px; /* Fixed height for consistency */
+  min-width: 100px; /* Ensure minimum width */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for buttons */
 }
-.auth-buttonsignup-button{
-  background-color: orange;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 120px;
-  height: 50px;
-  padding-left: 30px;
-}
-.auth-buttonlogout-button{
-   background-color: orange;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100px;
-  height: 50px;
-  padding-left: 22px;
 
+.auth-buttonlogin-button:hover,
+.auth-buttonsignup-button:hover,
+.auth-buttonlogout-button:hover {
+  background-color: #e69500; /* Darker orange on hover */
+  transform: translateY(-1px);
 }
+
+
+/* Media Queries for Mobile Responsiveness */
+
+/* Tablet and larger mobile devices (up to 768px wide) */
+@media (max-width: 768px) {
+  .page-section-wrapper {
+    padding: 30px 15px; /* Reduce vertical padding */
+  }
+
+  .header {
+    flex-direction: column; /* Stack header items vertically */
+    align-items: flex-start; /* Align items to the start */
+    padding: 10px 15px; /* Adjust padding */
+  }
+
+  .logo {
+    font-size: 22px;
+    margin-bottom: 10px; /* Space below logo when stacked */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack nav links vertically */
+    align-items: flex-start; /* Align links to the start */
+    width: 100%; /* Make nav links take full width */
+    margin-left: 0; /* Remove left margin */
+    margin-bottom: 10px; /* Space below nav links */
+  }
+
+  .nav-links .nav-button {
+    margin: 5px 0; /* Adjust vertical margin for stacked buttons */
+    padding: 8px 10px;
+    width: 100%; /* Make buttons full width */
+    text-align: left; /* Align text to left for stacked buttons */
+  }
+
+  .header-actions {
+    flex-direction: column; /* Stack action buttons vertically */
+    width: 100%; /* Make buttons take full width */
+    gap: 8px; /* Reduce gap between stacked buttons */
+  }
+
+  .header-actions .apply-jobs-btn,
+  .header-actions .post-job-btn {
+    width: 100%; /* Make buttons full width */
+    padding: 12px 15px; /* Increase padding for better touch target */
+    font-size: 16px; /* Ensure readability */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .footer {
+    padding: 15px; /* Adjust footer padding */
+  }
+
+  /* Metrics section adjustments for tablet/mobile */
+  .metrics-section-container {
+    padding: 50px 15px; /* Adjust padding for mobile */
+  }
+
+  .metrics-main-heading {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+
+  .metrics-cards-wrapper {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4";
+    gap: 20px; /* Increase gap between stacked cards for better separation */
+  }
+
+  .metric-card {
+    max-width: 100%;
+    padding: 25px;
+    height: auto; /* Remove fixed heights for mobile responsiveness */
+  }
+
+  /* Override desktop-specific card height and margin adjustments for mobile */
+  .metrics-cards-wrapper > div:nth-child(1),
+  .metrics-cards-wrapper > div:nth-child(2),
+  .metrics-cards-wrapper > div:nth-child(3),
+  .metrics-cards-wrapper > div:nth-child(4) {
+    height: auto; /* Ensure cards adjust height automatically */
+    margin-top: 0; /* Remove negative margin for card4 */
+  }
+
+  .card-highlight-large {
+    font-size: 2.8em;
+  }
+
+  .card-highlight-small {
+    font-size: 1.8em;
+  }
+
+  .card-subtext {
+    font-size: 0.9em;
+  }
+
+  /* Camera card adjustments for tablet/mobile */
+  .camera-card {
+    padding: 25px 20px; /* Slightly more vertical padding, consistent horizontal */
+    max-width: 90%; /* Slightly smaller max-width to give more edge space */
+    margin-left: auto;
+    margin-right: auto; /* Ensure it remains centered */
+    text-align: center; /* Center align all text within the card */
+  }
+
+  .camera-card h1 {
+    font-size: 24px; /* Maintain a good size */
+    margin: 15px 0 8px 0; /* Adjusted vertical spacing */
+  }
+
+  .camera-card h2 {
+    font-size: 13px; /* Slightly larger for readability */
+    margin: 5px 0 10px 0;
+  }
+
+  .camera-card p {
+    font-size: 15px; /* Larger for readability */
+    margin-bottom: 25px; /* More space before button */
+  }
+
+  .camera-card .shop-button {
+    padding: 15px 30px; /* Larger tap target */
+    font-size: 17px; /* Larger font for button */
+    width: 80%; /* Make button width more prominent but not full */
+    max-width: 300px; /* Prevent button from getting too wide on tablets */
+  }
+
+  .camera-card .content-camera {
+    max-height: 250px; /* Slightly increased max-height for better visual */
+    margin-bottom: 25px; /* More space below image */
+  }
+
+  /* Top page container adjustments for tablet/mobile */
+  .top-page-container {
+    padding: 10px 15px; /* Reduced padding */
+    min-height: auto; /* Allow height to adjust */
+  }
+
+  .top-page-content {
+    flex-direction: column; /* Stack main content and auth buttons vertically */
+    align-items: center; /* Center items */
+    text-align: center; /* Center text */
+    gap: 20px; /* Increased gap for better separation */
+  }
+
+  .top-page-center-content {
+    flex-direction: column; /* Stack icon, text, button vertically */
+    margin-right: 0; /* Remove fixed margin */
+    gap: 10px; /* Reduced gap for stacked elements */
+    width: 100%; /* Take full width */
+  }
+
+  .top-page-text {
+    font-size: 16px; /* Reduced font size */
+    white-space: normal; /* Allow text to wrap on small screens */
+    padding: 0 10px; /* Add some horizontal padding */
+  }
+
+  .join-waitlist-button {
+    width: 90%; /* Make button nearly full width */
+    max-width: 280px; /* Limit max width */
+    font-size: 15px;
+    padding: 12px 15px;
+  }
+
+  .auth-buttons-container {
+    flex-direction: column; /* Stack auth buttons vertically */
+    width: 90%; /* Make container nearly full width */
+    max-width: 300px;
+    gap: 10px;
+  }
+
+  .auth-buttonlogin-button,
+  .auth-buttonsignup-button,
+  .auth-buttonlogout-button {
+    width: 100%; /* Make auth buttons full width */
+    font-size: 15px;
+    padding: 12px 0; 
+  }}

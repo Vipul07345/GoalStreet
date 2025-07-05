@@ -57,4 +57,13 @@
   .about-us-paragraph {
     font-size: 15px;
   }
+  .about-us-image{
+    max-width: 150px;
+    height: 200px;
+   
+  }
+  .about-us-whole-image{
+    display: flex;
+    justify-content: center;
+  }
 }

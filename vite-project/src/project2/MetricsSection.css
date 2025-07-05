@@ -1,145 +1,406 @@
+/* Universal Box-Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base HTML and Body Styles */
+html, body {
+  background-color: #f0fbff;
+  font-family: 'Inter', Arial, sans-serif; /* Changed font to Inter for consistency */
+  max-width: 1500px; /* Max width for larger screens */
+  width: 100%;
+  min-width: 100vw; /* Ensures it takes full viewport width */
+  min-height: 100vh; /* Ensures it takes full viewport height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto;
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+/* Hide Webkit Scrollbars */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
+}
+
+/* Main Application Container */
+.apptotalproject {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Full Viewport Width Utility */
+.full-viewport-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+/* Page Section Wrapper */
+.page-section-wrapper {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Inner App Container */
+.app-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto; /* Centers the content */
+  flex-grow: 1;
+  overflow-x: hidden; /* Prevent horizontal scrolling within container */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f0fbff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Added subtle shadow for depth */
+}
+
+/* Logo Styles */
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333; /* Darker color for better contrast */
+  cursor: pointer;
+  white-space: nowrap; /* Prevent logo from wrapping */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  flex-grow: 1; /* Allow nav links to take available space */
+  justify-content: flex-start; /* Align links to the start by default */
+  margin-left: 20px; /* Space from logo */
+}
+
+.nav-links .nav-button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  border-bottom: 2px solid transparent; /* Added for active state visual */
+}
+
+.nav-links .nav-button:hover,
+.nav-links .nav-button.active {
+  color: #007bff; /* Changed to a standard blue for hover/active */
+  border-color: #007bff; /* Highlight active link with border */
+}
+
+/* Header Actions (Buttons) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between action buttons */
+}
+
+.header-actions .apply-jobs-btn,
+.header-actions .post-job-btn {
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 18px; /* Slightly more padding for better touch targets */
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease; /* Added transform for subtle click effect */
+  white-space: nowrap; /* Prevent buttons from wrapping text */
+}
+
+.header-actions .apply-jobs-btn {
+  background-color: #FFA500; /* Orange color */
+}
+
+.header-actions .post-job-btn {
+  background-color: #5454A9; /* Darker blue */
+}
+
+.header-actions .apply-jobs-btn:hover {
+  background-color: #e69500;
+  transform: translateY(-1px);
+}
+
+.header-actions .post-job-btn:hover {
+  background-color: #43438a;
+  transform: translateY(-1px);
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  background-color: #f0fbff;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto; /* Pushes footer to the bottom */
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.05); /* Subtle shadow for footer */
+}
+
+/* Metrics Section Styles */
 .metrics-section-container {
-    background-color: #f0fbff;
-    padding: 80px 20px;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  background-color: #f0fbff;
+  padding: 80px 20px;
+  font-family: 'Inter', Arial, sans-serif; /* Changed font to Inter for consistency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .metrics-main-heading {
-    font-size: 3em;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 60px;
-    max-width: 800px;
-    line-height: 1.2;
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 60px;
+  max-width: 800px;
+  line-height: 1.2;
 }
 
 .metrics-cards-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "card1 card2"
-        "card3 card4";
-    gap: 15px; /* Reduced gap to remove excess space */
-    max-width: 900px;
-    width: 100%;
-    justify-content: center;
-    align-items: stretch;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "card1 card2"
+    "card3 card4";
+  gap: 15px;
+  max-width: 900px;
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .metric-card {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
-    transition: transform 0.2s ease-in-out;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out;
 }
 
 .metric-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
-/* Assign specific heights */
+/* Assign specific heights - these will be adjusted for mobile */
 .metrics-cards-wrapper > div:nth-child(1) { /* Large 5 job interviews */
-    grid-area: card1;
-    height: 300px;
+  grid-area: card1;
+  height: 300px;
 }
 
 .metrics-cards-wrapper > div:nth-child(2) { /* Small ~15 days */
-    grid-area: card2;
-    height: 180px;
+  grid-area: card2;
+  height: 180px;
 }
 
 .metrics-cards-wrapper > div:nth-child(3) { /* Small 24x7 support */
-    grid-area: card3;
-    height: 180px;
+  grid-area: card3;
+  height: 180px;
 }
 
-.metrics-cards-wrapper > div:nth-child(4) { /* Small 5 job interviews */
-    grid-area: card4;
-    height: 300px;
-    margin-top: -120px;
+.metrics-cards-wrapper > div:nth-child(4) { /* Large 5 job interviews (originally small, adjusted to large by user) */
+  grid-area: card4;
+  height: 300px;
+  margin-top: -120px; /* This will be overridden for mobile */
 }
 
-/* Fix the spacing issue on the right side */
+/* Fix the spacing issue on the right side - this will be overridden for mobile */
 .metric-card-fixed {
-    margin-top: -5px; /* Slight negative margin to ensure perfect alignment */
+  margin-top: -5px;
 }
 
-/* Font sizes */
+/* Font sizes for metric cards */
 .card-highlight-large {
-    font-size: 3.2em;
-    font-weight: bold;
-    color: #333;
-    margin: 10px 0;
+  font-size: 3.2em;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
 }
 
 .card-highlight-small {
-    font-size: 2em;
-    font-weight: bold;
-    color: #333;
-    margin: 10px 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
 }
 
 .card-subtext {
-    font-size: 1em;
-    color: #666;
-    line-height: 1.4;
-    margin: 5px 0;
+  font-size: 1em;
+  color: #666;
+  line-height: 1.4;
+  margin: 5px 0;
 }
 
-/* Responsive adjustments */
+/* Media Queries for Mobile Responsiveness */
+
+/* Tablet and larger mobile devices (up to 768px wide) */
 @media (max-width: 768px) {
-    .metrics-main-heading {
-        font-size: 2.2em;
-        margin-bottom: 40px;
-    }
+  .page-section-wrapper {
+    padding: 30px 15px; /* Reduce vertical padding */
+  }
 
-    .metrics-cards-wrapper {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "card1"
-            "card2"
-            "card3"
-            "card4";
-        gap: 15px;
-    }
+  .header {
+    flex-direction: column; /* Stack header items vertically */
+    align-items: flex-start; /* Align items to the start */
+    padding: 10px 15px; /* Adjust padding */
+  }
 
-    .metric-card {
-        max-width: 100%;
-        padding: 25px;
-        height: auto;
-    }
+  .logo {
+    font-size: 22px;
+    margin-bottom: 10px; /* Space below logo when stacked */
+  }
 
-    .card-highlight-large {
-        font-size: 2.8em;
-    }
+  .nav-links {
+    flex-direction: column; /* Stack nav links vertically */
+    align-items: flex-start; /* Align links to the start */
+    width: 100%; /* Make nav links take full width */
+    margin-left: 0; /* Remove left margin */
+    margin-bottom: 10px; /* Space below nav links */
+  }
 
-    .card-highlight-small {
-        font-size: 1.8em;
-    }
+  .nav-links .nav-button {
+    margin: 5px 0; /* Adjust vertical margin for stacked buttons */
+    padding: 8px 10px;
+    width: 100%; /* Make buttons full width */
+    text-align: left; /* Align text to left for stacked buttons */
+  }
 
-    .card-subtext {
-        font-size: 0.9em;
-    }
+  .header-actions {
+    flex-direction: column; /* Stack action buttons vertically */
+    width: 100%; /* Make buttons take full width */
+    gap: 8px; /* Reduce gap between stacked buttons */
+  }
+
+  .header-actions .apply-jobs-btn,
+  .header-actions .post-job-btn {
+    width: 100%; /* Make buttons full width */
+    padding: 12px 15px; /* Increase padding for better touch target */
+    font-size: 16px; /* Ensure readability */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .footer {
+    padding: 15px; /* Adjust footer padding */
+  }
+
+  /* Metrics section adjustments for tablet/mobile */
+  .metrics-section-container {
+    padding: 50px 15px; /* Adjust padding for mobile */
+  }
+
+  .metrics-main-heading {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+
+  .metrics-cards-wrapper {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4";
+    gap: 20px; /* Increase gap between stacked cards for better separation */
+  }
+
+  .metric-card {
+    max-width: 100%;
+    padding: 25px;
+    height: auto; /* Remove fixed heights for mobile responsiveness */
+  }
+
+  /* Override desktop-specific card height and margin adjustments for mobile */
+  .metrics-cards-wrapper > div:nth-child(1),
+  .metrics-cards-wrapper > div:nth-child(2),
+  .metrics-cards-wrapper > div:nth-child(3),
+  .metrics-cards-wrapper > div:nth-child(4) {
+    height: auto; /* Ensure cards adjust height automatically */
+    margin-top: 0; /* Remove negative margin for card4 */
+  }
+
+  .card-highlight-large {
+    font-size: 2.8em;
+  }
+
+  .card-highlight-small {
+    font-size: 1.8em;
+  }
+
+  .card-subtext {
+    font-size: 0.9em;
+  }
 }
 
+/* Smaller mobile devices (up to 480px wide) */
 @media (max-width: 480px) {
-    .metrics-main-heading {
-        font-size: 1.8em;
-    }
+  .page-section-wrapper {
+    padding: 20px 10px; /* Further reduce padding for very small screens */
+  }
 
-    .metric-card {
-        padding: 20px;
-    }
+  .header {
+    padding: 10px; /* Smaller header padding */
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links .nav-button {
+    font-size: 14px; /* Smaller font size for nav buttons */
+  }
+
+  .header-actions .apply-jobs-btn,
+  .header-actions .post-job-btn {
+    font-size: 14px; /* Smaller font size for action buttons */
+    padding: 10px 12px;
+  }
+
+  /* Metrics section adjustments for very small mobile */
+  .metrics-section-container {
+    padding: 30px 10px; /* Further reduce padding */
+  }
+
+  .metrics-main-heading {
+    font-size: 1.8em;
+  }
+
+  .metric-card {
+    padding: 20px;
+  }
+
+  .card-highlight-large {
+    font-size: 2.5em; /* Slightly smaller for very small screens */
+  }
+
+  .card-highlight-small {
+    font-size: 1.6em; /* Slightly smaller for very small screens */
+  }
 }

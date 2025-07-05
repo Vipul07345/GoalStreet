@@ -36,13 +36,6 @@
   background-color: #4a4a8a;
   transform: translateY(-2px);
 }
-
-@media (max-width: 480px) {
-  .access-now-btn {
-    font-size: 16px;
-    padding: 10px 25px;
-  }
-}
 .footer-image{
   max-width: 593px;
   height: 445px;
@@ -50,3 +43,18 @@
   margin-bottom: 50px;
 
 }
+
+@media (max-width: 480px) {
+  .access-now-btn {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+  .footer-image{
+  max-width: 300px;
+  height: 250px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+
+}
+}
+

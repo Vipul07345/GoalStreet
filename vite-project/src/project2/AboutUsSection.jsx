@@ -5,8 +5,9 @@ import './AboutUsSection.css';
 function AboutUsSection() {
   return (
     <div>
+      <div className='about-us-whole-image'>
       <div className='about-us-image'><img  src="https://www.goalstreet.in/assets/AboutUs-CnEoUlNO.jpeg" alt="" /></div>
-        
+        </div>
         <div className="about-us-section-container">
       <h2 className="about-us-title">About Us</h2>
       <p className="about-us-paragraph">
